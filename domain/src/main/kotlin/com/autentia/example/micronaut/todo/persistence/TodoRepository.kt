@@ -6,6 +6,6 @@ interface TodoRepository {
 
     fun findAll(): List<Todo>
 
-    fun findBy(id: Int): Todo?
+    fun findBy(id: Int): Todo
 
 }

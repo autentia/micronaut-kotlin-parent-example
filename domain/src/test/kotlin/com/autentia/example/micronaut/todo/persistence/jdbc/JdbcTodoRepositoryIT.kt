@@ -2,7 +2,7 @@ package com.autentia.example.micronaut.todo.persistence.jdbc
 
 import com.autentia.example.micronaut.todo.Todo
 import com.autentia.example.micronaut.todo.persistence.TodoRepository
-import io.micronaut.test.annotation.MicronautTest
+import io.micronaut.test.extensions.junit5.annotation.MicronautTest
 import org.junit.jupiter.api.Test
 
 import javax.inject.Inject
@@ -18,7 +18,7 @@ internal class JdbcTodoRepositoryIT {
 
     @Test
     internal fun find_all() {
-        val actuals = todoRepository!!.findAll()
+        val actuals = todoRepository.findAll()
 
         assertEquals(
             listOf(
@@ -46,11 +46,12 @@ internal class JdbcTodoRepositoryIT {
 
     @Test
     internal fun find_by_id() {
-        val actual = todoRepository!!.findBy(2)
+        val actual = todoRepository.findBy(2)
 
         assertEquals(
             Todo(2, "Ride a helicopter", LocalDateTime.parse("2017-10-21T14:42:57")),
             actual
         )
     }
+
 }
